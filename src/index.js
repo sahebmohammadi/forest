@@ -10,6 +10,7 @@ import theme from "../src/theme";
 import { create } from "jss";
 import rtl from "jss-rtl";
 import { StylesProvider, jssPreset } from "@material-ui/core/styles";
+import StateMainContext from "./components/context/StateMainContext";
 
 // Configure JSS
 const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
@@ -18,7 +19,9 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <StylesProvider jss={jss}>
+        <StateMainContext>
         <App />
+        </StateMainContext>
       </StylesProvider>
     </ThemeProvider>
   </React.StrictMode>,
