@@ -1,5 +1,20 @@
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import routes from './routes/routes';
+import AppLayout from './layout/AppLayout';
+// import AuthProvider from 'components/AuthProvider';
+// import PrivateRoute from 'components/PrivateRoute';
+
 const App = () => {
-  return <div>wellcome to p306</div>;
+  return (
+    <AppLayout>
+      <Switch>
+        {routes.map((route) => (
+          <Route {...route} />
+        ))}
+      </Switch>
+    </AppLayout>
+  );
 };
 
 export default App;
