@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 
@@ -13,7 +13,7 @@ import ProductList from '../ProductList';
 
 const MainLayer = () => {
 
-
+const [close, setClose] = useState(false);
 
     const useStyles = makeStyles({
         root: {
@@ -21,6 +21,9 @@ const MainLayer = () => {
             maxWidth: "30%",
             position: "relative",
             boxShadow: "none"
+        },
+        close:{
+            display:"none"
         },
         bullet: {
             display: 'inline-block',
@@ -38,7 +41,9 @@ const MainLayer = () => {
     });
 
 
-
+const handleClose = () => {
+    setClose(true)
+}
 
 
     const classes = useStyles();
@@ -47,7 +52,7 @@ const MainLayer = () => {
 
     return (
 
-        <Card className={classes.root}>
+        <Card className={(close) ? classes.close : classes.root}>
 
             <CardContent>
 
@@ -55,7 +60,7 @@ const MainLayer = () => {
                     عنوان اصلی گروه لایه‌ها
                 </Typography>
 
-                <IconButton aria-label="close" className={classes.closeButton} >
+                <IconButton aria-label="close" className={classes.closeButton} onClick={handleClose}>
                     <CloseIcon />
                 </IconButton>
 
