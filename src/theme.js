@@ -1,26 +1,22 @@
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
-  direction: "rtl",
+  direction: 'rtl',
   palette: {
     primary: {
-      main: "#052971",
+      main: '#00A594',
     },
     secondary: {
-      main: "#979797",
+      main: '#747070',
     },
     error: {
-      main: "#f44336",
+      main: '#FD5944',
     },
   },
   typography: {
-    fontFamily: [
-      "Shabnam",
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-    ].join(","),
+    fontFamily: ['IRANSans', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'].join(
+      ',',
+    ),
   },
 });
 
