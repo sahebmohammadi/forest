@@ -32,6 +32,7 @@ const DrawerList = ({ location }) => {
   //   setListItems(items);
   // };
   const IconText = styled.span`
+    font-size: 0.8rem;
     color: ${(props) => (props.path === location.pathname ? '#00a594' : '#747070')};
   `;
 
