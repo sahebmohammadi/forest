@@ -1,13 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import AppLayout from '../layout/AppLayout';
 
 const DashboardPage = () => {
-  return (
-    <>
-      <p>اینجا صفحه داشبور است</p>
-      <Link to="#">برو به ...</Link>
-    </>
-  );
+  return <AppLayout>wellcome to DashboardPage</AppLayout>;
 };
 
 export default DashboardPage;

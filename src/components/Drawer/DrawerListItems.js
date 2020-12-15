@@ -1,47 +1,39 @@
-// import uuid from 'react-uuid';
-// import ListIcon from './ListIcon';
-// export const drawerListItems = [
-//   {
-//     text: 'محصولات',
-//     icon: <ListIcon iconName="products.svg" />,
-//     isExpand: false,
-//     id: uuid(),
-//     subListItems: null,
-//   },
-//   {
-//     text: 'سفارشات',
-//     icon: <ListIcon iconName="orders.svg" />,
-//     isExpand: false,
-//     id: uuid(),
-//     subListItems: null,
-//   },
-//   {
-//     text: 'مالی',
-//     icon: <ListIcon iconName="ic-ecommerce-money.svg" />,
-//     isExpand: false,
-//     id: uuid(),
-//     subListItems: null,
-//   },
-//   {
-//     text: 'فروشگاه',
-//     icon: <ListIcon iconName="merchantManagment.svg" />,
-//     isExpand: false,
-//     id: uuid(),
-//     subListItems: [{ text: 'فروشگاه', id: uuid(), link: '/merchant/store' }],
-//   },
+import uuid from 'react-uuid';
+import { ReactComponent as ForestChanges } from '../../assets/images/forestChanges.svg';
+import { ReactComponent as GroundCover } from '../../assets/images/groundCover.svg';
+import { ReactComponent as Dashboard } from '../../assets/images/dashboard.svg';
+import { ReactComponent as Profile } from '../../assets/images/panel.svg';
+import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 
-//   {
-//     text: 'تنظیمات',
-//     icon: <ListIcon iconName="settings.svg" />,
-//     isExpand: false,
-//     id: uuid(),
-//   },
-// ];
-
-// export const appIcon = [
-//   {
-//     text: '',
-//     icon: <img src="../../assets/images/logo.svg" alt="forest" />,
-//     id: uuid(),
-//   }
-// ];
+export const drawerListItems = [
+  {
+    text: '',
+    icon: [<Logo fill="#00a594" />, <Logo fill="#00a594" />],
+    id: uuid(),
+    path: '',
+  },
+  {
+    text: 'تغییرات جنگل',
+    icon: [<ForestChanges fill="#747070" />, <ForestChanges fill="#00a594" />],
+    id: uuid(),
+    path: '/forestChanges',
+  },
+  {
+    text: 'پوشش زمین',
+    icon: [<GroundCover fill="#747070" />, <GroundCover fill="#00a594" />],
+    id: uuid(),
+    path: '/groundCover',
+  },
+  {
+    text: 'داشبورد',
+    icon: [<Dashboard fill="#747070" />, <Dashboard fill="#00a594" />],
+    id: uuid(),
+    path: '/dashboard',
+  },
+  {
+    text: 'فضای شخصی',
+    icon: [<Profile fill="#747070" />, <Profile fill="#00a594" />],
+    id: uuid(),
+    path: '/profile',
+  },
+];

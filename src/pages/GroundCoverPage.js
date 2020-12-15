@@ -1,11 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
+import AppLayout from '../layout/AppLayout';
 const GroundCoverPage = () => {
   return (
     <>
-      <p>اینجا صفحه پوشش زمین است</p>
-      <Link to="#">برو به ...</Link>
+      <AppLayout>grond cover ...</AppLayout>
     </>
   );
 };
