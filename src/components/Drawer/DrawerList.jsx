@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   height: 500px;
   flex-direction: column;
   align-items: center;
+  position: fixed;
 `;
 const ListItem = styled.div`
   display: flex;

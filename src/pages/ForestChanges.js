@@ -8,10 +8,11 @@ const ForestChangesPage = () => {
     justify-content: space-between;
   `;
   const LayerData = styled.div`
+    position: fixed;
     width: 255px;
     border-radius: 15px;
-    background-color: #fff;
-    height: 708px;
+    background-color: #efefef;
+    height: 500px;
   `;
 
   return (
@@ -19,7 +20,7 @@ const ForestChangesPage = () => {
       <AppLayout>
         <Wrapper>
           <LayerData>saheb</LayerData>
-          <LayerData>mim</LayerData>
+          {/* <Laye rData>mim</LayerData> */}
         </Wrapper>
       </AppLayout>
     </>
