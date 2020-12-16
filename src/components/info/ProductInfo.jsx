@@ -24,49 +24,30 @@ const useStyles = makeStyles((theme) => ({
     closeButton: {
         position: 'absolute',
         right: 35,
-        top: 5
+        top: 2,
+        zIndex:10
     }
 }));
 
 const ProductInfo = () => {
     const classes = useStyles();
 
-
-    const [close, setClose] = useState(false);
-    const [products, setProducts] = useState([])
     const context = useContext(MainContext);
 
-    const { hiddenProduct } = context;
+    const { hiddenProduct, setHiddenProduct } = context;
 
-    console.log(products);
-
-    useEffect(() => {
-        const sumProducts = () => {
-            for (let i = 0; i < hiddenProduct.length; i++) {
-                const element = hiddenProduct[i].products;
-                console.log(element);
-                for (let n = 0; n < element.length; n++) {
-                    console.log(element[n]);
-                    setProducts((products) => ([...products, element[n]]))
-                    console.log(products);
-
-                }
-
-            }
-
-        }
-        sumProducts();
-    }, [])
-
-
-    const handleClose = () => {
-        setClose(true)
+    const handleClose = (index1, index2) => {
+        const productsState = [...hiddenProduct];
+        productsState[index1].products[index2].checked = false;
+        productsState[index1].products[index2].hidden = true;
+        setHiddenProduct(productsState);
     }
 
     return (
         <div className={classes.root}>
 
-            {products.map((product, index) => (
+            {hiddenProduct.map((products, index1) => 
+            products.products.map((product, index2) => (
                 <Accordion
                     hidden={product.hidden}
                 >
@@ -75,7 +56,7 @@ const ProductInfo = () => {
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                     >
-                        <IconButton aria-label="close" className={classes.closeButton} onClick={handleClose}>
+                        <IconButton aria-label="close" className={classes.closeButton} onClick={() => handleClose(index1, index2)} >
                             <CloseIcon />
                         </IconButton>
                         <Typography className={classes.heading}>{product.title}</Typography>
@@ -86,8 +67,9 @@ const ProductInfo = () => {
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
+            ))
+            )}
 
-            ))}
 
         </div>
     );

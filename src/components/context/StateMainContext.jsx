@@ -40,6 +40,7 @@ const StateMainContext = ({ children }) => {
     return (
         <MainContext.Provider value={{
             hiddenProduct,
+            setHiddenProduct,
             handleHiddenChange
         }}>
             {children}
