@@ -11,8 +11,17 @@ const useStyles = makeStyles(() => ({
     root: {
         width:"100%",
         display:"flex",
-        alignContent:"center"
+        alignContent:"center",
+        boxShadow: "none",
+        paddingTop:"10px",
     },
+    switch: {
+        alignSelf:"top"
+    },
+    text: {
+        alignSelf:"top",
+        paddingTop:0,
+    }
 }));
 
 const Product = ({products, index2}) => {
@@ -30,9 +39,10 @@ const Product = ({products, index2}) => {
             {products.map((product, index) => (
 
                 <Card className={classes.root} >
-                    <Switch checked={product.checked} onChange={() => handleHiddenChange(index, index2)} color="primary" />
+                    <Switch className={classes.switch} checked={product.checked} onChange={() => handleHiddenChange(index, index2)} color="primary" />
                     <CardContent
                         ariaLabel="SpeedDial example"
+                        className={classes.text}
                         >
 
                         <Typography variant="h5" component="h2">
