@@ -17,10 +17,11 @@ const [close, setClose] = useState(false);
 
     const useStyles = makeStyles({
         root: {
+            width:"30%",
             minWidth: 275,
-            maxWidth: "30%",
             position: "relative",
-            boxShadow: "none"
+            boxShadow: "none",
+            borderRadius: "20px"
         },
         close:{
             display:"none"
@@ -30,8 +31,12 @@ const [close, setClose] = useState(false);
             margin: '0 2px',
             transform: 'scale(0.8)',
         },
-        title: {
-            fontSize: 14,
+        line: {
+            height:"2px",
+            width:"80%",
+            backgroundColor:"#EDEDED",
+            borderBottom:"2px solid #EDEDED",
+            margin:"10px auto"
         },
         closeButton: {
             position: 'absolute',
@@ -56,10 +61,10 @@ const handleClose = () => {
 
             <CardContent>
 
-                <Typography variant="h5" component="h2">
+                <Typography variant="h5" component="h2" >
                     عنوان اصلی گروه لایه‌ها
                 </Typography>
-
+                <div className={classes.line} />
                 <IconButton aria-label="close" className={classes.closeButton} onClick={handleClose}>
                     <CloseIcon />
                 </IconButton>
