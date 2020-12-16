@@ -47,7 +47,6 @@ const Product = ({products, index2}) => {
 
                         <Typography variant="h5" component="h2">
                             {product.title}
-
                         </Typography>
                         <Typography className={classes.pos} color="textSecondary">
                             {product.description}
