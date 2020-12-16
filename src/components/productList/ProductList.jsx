@@ -7,7 +7,9 @@ import MainContext from '../context/MainContext';
 
 const useStyles = makeStyles(() => ({
     root: {
-        minWidth: 275,
+        minWidth: 300,
+        width:"40%",
+        flexGrow:1,
     },
 }));
 
@@ -19,7 +21,7 @@ const ProductList = () => {
 
     return (
         <Fragment>
-            <div>
+            <div >
             {hiddenProduct.map((list, index) => (
                 <div className={classes.root}>
                     <h2 className={classes.title}>{list.title}</h2>

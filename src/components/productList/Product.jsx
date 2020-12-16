@@ -9,7 +9,9 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
     root: {
-        minWidth: 275,
+        width:"100%",
+        display:"flex",
+        alignContent:"center"
     },
 }));
 
@@ -27,12 +29,11 @@ const Product = ({products, index2}) => {
 
             {products.map((product, index) => (
 
-
                 <Card className={classes.root} >
                     <Switch checked={product.checked} onChange={() => handleHiddenChange(index, index2)} color="primary" />
                     <CardContent
                         ariaLabel="SpeedDial example"
-                        hidden={product.hidden} >
+                        >
 
                         <Typography variant="h5" component="h2">
                             {product.title}

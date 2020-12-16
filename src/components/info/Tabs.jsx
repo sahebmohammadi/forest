@@ -8,6 +8,7 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import ProductInfo from './ProductInfo';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -78,7 +79,7 @@ const Tabss = () => {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Item One
+        <ProductInfo/>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two

@@ -17,9 +17,9 @@ const StateMainContext = ({ children }) => {
         {
             title: "تیتر گروه ۲",
             products: [
-                { id: 1, title: "product one", description: "Description one", hidden: false, checked: true },
-                { id: 2, title: "product two", description: "Description two", hidden: false, checked: true },
-                { id: 3, title: "product three", description: "Description three", hidden: false, checked: true }
+                { id: 1, title: "product one2", description: "Description one", hidden: false, checked: true },
+                { id: 2, title: "product two2", description: "Description two", hidden: false, checked: true },
+                { id: 3, title: "product three2", description: "Description three", hidden: false, checked: true }
             ]
         }
     ]
