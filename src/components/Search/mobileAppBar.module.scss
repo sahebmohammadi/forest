@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  position: fixed;
+  margin-left: 30px;
+  padding: 0;
+  left: 0;
+  width: 46vw;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 1px;
+  }
+  .search {
+    position: relative;
+    input {
+      position: absolute;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      &:focus {
+        border: 1px solid blue;
+        width: 30vw;
+        transition: width 300ms ease-in-out;
+        -webkit-animation: around 4s linear infinite;
+      }
+    }
+    span {
+      position: absolute;
+      top: 22%;
+      left: 23%;
+    }
+  }
+  .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 4px;
+    > div {
+      > div {
+        width: 8vw;
+        height: auto;
+        border-radius: 3px;
+      }
+    }
+    .profileInfo {
+      margin-right: 1vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 9px;
+      font-family: 'IRANSans';
+      font-weight: bold;
+      color: #747070;
+      height: 38px;
+      > span {
+        // height: 20px;
+        width: 5vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}

@@ -83,10 +83,16 @@
     justify-content: flex-end;
     // width: 15vw;
     .profile {
-      width: 8vw;
+      width: 11vw;
+      height: 11vw;
+      > div {
+        > div {
+          width: 9vw;
+        }
+      }
     }
     .search {
-      width: 10vw;
+      width: 11vw;
     }
   }
 }
