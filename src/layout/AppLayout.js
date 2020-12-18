@@ -22,19 +22,8 @@ const Content = styled.div`
   border-radius: 15px;
   padding: 1rem;
 `;
-const ProfileWrapper = styled.div`
-  display: flex;
-  position: fixed;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  width: 100%;
-  height: 400px;
-  background-color: #ccc;
-`;
-const Account = styled.div`
-  // width: 30%;
-  height: 100%;
-`;
+
+
 const AppLayout = ({ children }) => {
   const matches = useMediaQuery('(max-width:960px)');
   return (
