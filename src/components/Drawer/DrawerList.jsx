@@ -5,11 +5,13 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
-  width: 114px;
+  // width: 114px;
+  width: 8vw;
   height: 500px;
   flex-direction: column;
   align-items: center;
   position: fixed;
+  padding-right: 5px;
 `;
 const ListItem = styled.div`
   display: flex;
@@ -17,8 +19,8 @@ const ListItem = styled.div`
   align-items: center;
   justify-content: center;
   // width: 86px;
-  width: 7vw;
-  height: 74px;
+  width: 6.5vw;
+  height: 6.5vw;
   a {
     color: #747070;
   }
@@ -26,7 +28,7 @@ const ListItem = styled.div`
 // Drawer List
 const DrawerList = ({ location }) => {
   const IconText = styled.span`
-    font-size: 0.8rem;
+    font-size: 0.87rem;
     color: ${(props) => (props.path === location.pathname ? '#00a594' : '#747070')};
   `;
 

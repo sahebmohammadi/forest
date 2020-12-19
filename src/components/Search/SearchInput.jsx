@@ -7,9 +7,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import styles from './appBar.module.scss';
 const useStyles = makeStyles((theme) => ({
   input: {
-    height: '30px',
+    height: '56px',
     marginTop: 0,
-    width: '17vw',
+    width: '234px',
   },
   search: { backgroundColor: '#fff', height: '56px', borderRadius: '10px' },
 }));

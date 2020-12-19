@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import routes from './routes/routes';
 import AppLayout from './layout/AppLayout';
@@ -7,12 +7,17 @@ import uuid from 'react-uuid';
 // import PrivateRoute from 'components/PrivateRoute';
 
 const App = () => {
+  // useEffect(() => {
+  //   console.log('saheb mim');
+  // }, []);
   return (
-    <Switch>
-      {routes.map((route) => (
-        <Route key={uuid()} {...route} />
-      ))}
-    </Switch>
+    <AppLayout>
+      <Switch>
+        {routes.map((route) => (
+          <Route key={uuid()} {...route} />
+        ))}
+      </Switch>
+    </AppLayout>
   );
 };
 

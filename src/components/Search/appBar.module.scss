@@ -4,27 +4,34 @@
   margin-left: 30px;
   padding: 0;
   left: 0;
-  width: 28vw;
+  width: 383px;
   align-items: center;
   justify-content: space-between;
   .search {
     // background-color: red;
     border-radius: 10px;
-    width: 17vw;
+    width: 234px;
     height: 56px;
     z-index: 10;
   }
   .profile {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     border-radius: 10px;
     background-color: #fff;
-    width: 10vw;
+    width: 140px;
     height: 56px;
     padding: 4px;
+    > div {
+      width: 45px;
+      height: 45px;
+      > img {
+        width: 100%;
+        height: auto;
+      }
+    }
     .profileInfo {
-      margin-right: 1vw;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -32,67 +39,16 @@
       font-family: 'IRANSans';
       font-weight: bold;
       color: #747070;
-      width: 5vw;
-      height: 38px;
+      // width: 4.5vw;
+      width: 70px;
+      height: 40px;
       > span {
-        // height: 20px;
-        width: 5vw;
+        height: 35px;
+        // width: 5vw;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
-    }
-  }
-}
-
-.mobileInput {
-  position: relative;
-  input {
-    position: absolute;
-    left: 1vw;
-    border-radius: 8px;
-    background-color: #fff;
-    border: none;
-    outline: none;
-    width: 8vw;
-    height: 56px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    &:focus {
-      border: 1px solid blue;
-      width: 30vw;
-      transition: width 300ms ease-in-out;
-      -webkit-animation: around 4s linear infinite;
-    }
-  }
-  span {
-    position: absolute;
-    top: 16px;
-    left: 2.5vw;
-  }
-}
-
-@media (max-width: 767px) {
-  div.profileInfo {
-    display: none !important;
-  }
-  .profileInfo > span {
-    display: none;
-  }
-  .container {
-    justify-content: flex-end;
-    // width: 15vw;
-    .profile {
-      width: 11vw;
-      height: 11vw;
-      > div {
-        > div {
-          width: 9vw;
-        }
-      }
-    }
-    .search {
-      width: 11vw;
     }
   }
 }

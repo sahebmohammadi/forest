@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
-  height: 60px;
+  height: 40px;
   flex-direction: row;
   align-items: center;
   position: fixed;
