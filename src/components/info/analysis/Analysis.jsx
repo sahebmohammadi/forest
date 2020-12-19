@@ -8,9 +8,11 @@ import LayersIcon from '@material-ui/icons/Layers';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import ProductInfo from './ProductInfo';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import Analysis from './analysis/Analysis';
+import select from '../../../assets/images/select.svg';
+import drawing from '../../../assets/images/drawing.svg';
+import Drawing from './Drawing/Drawing';
+import Selecting from './Selecting/Selecting';
 
 const theme = createMuiTheme({
   direction: 'rtl',
@@ -31,15 +33,32 @@ const theme = createMuiTheme({
     ),
   },
   overrides: {
+    PrivateTabIndicator: {
+      root: {
+        height: 0,
+      },
+    },
+
     MuiTab: {
       wrapper: {
-        flexDirection: 'row',
-        fontSize: 15,
+        fontSize: 11,
         padding: 0,
       },
       root: {
-        minWidth:'50% !important',
-      }
+        padding: '0 0',
+        minWidth: '50% !important',
+      },
+    },
+    MuiTabs: {
+      wrapper: {
+        flexDirection: 'row',
+        fontSize: 13,
+        padding: 0,
+      },
+      root: {
+        padding: '0 0',
+        minWidth: 20,
+      },
     },
   },
 });
@@ -79,34 +98,42 @@ function a11yProps(index) {
 
 const useStyles = makeStyles(() => ({
   root: {
-    width: '50%',
+    width: '100%',
     backgroundColor: 'white',
-    marginLeft: '1.5%',
     borderRadius: '8px',
     color: '#747070',
   },
 
   appbar: {
-    width: '100%',
     borderRadius: '8px',
     boxShadow: 'none',
-    display: 'flex',
-    justifyContent: 'center',
+  },
+  text: {
+    fontSize: '11px',
+    margin:"15px auto",
+    color:"#747070"
   },
   tabs: {
-    display: 'flex',
-    justifyContent: 'center',
-    margin: '0 auto',
-    width: '96%',
+    borderRadius: '5px',
   },
   tabj: {
-    borderBottom: '2px solid #eee',
+    background: '#fff',
+    border: 0,
+    color: '#9D9B9B !important',
+    '&:focus': {
+      background: '#fafafa',
+      color: '#747070 !important',
+    },
+    '&:active': {
+      background: '#fafafa',
+      color: '#747070',
+    },
     padding: 0,
     flexGrow: 1,
   },
 }));
 
-const Tabb = () => {
+const Analysis = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -117,6 +144,9 @@ const Tabb = () => {
   return (
     <div className={classes.root}>
       <AppBar position="static" color="white" className={classes.appbar}>
+        <p className={classes.text}>
+        تغییرات را در جنگلها مشخص و پایش کنید
+        </p>
         <MuiThemeProvider theme={theme}>
           <Tabs
             value={value}
@@ -131,27 +161,29 @@ const Tabb = () => {
             <Tab
               p={0}
               className={classes.tabj}
-              label="راهنمای لایه"
-              icon={<LayersIcon />}
+              label="ترسیم روی نقشه"
+              icon={<img src={drawing}></img>}
               {...a11yProps(0)}
             />
             <Tab
               className={classes.tabj}
-              label="آنالیز"
-              icon={<BarChartIcon />}
+              label="انتخاب از روی نقشه"
+              icon={<img src={select}></img>}
               {...a11yProps(1)}
             />
           </Tabs>
         </MuiThemeProvider>
+
       </AppBar>
+
       <TabPanel value={value} index={0}>
-        <ProductInfo />
+        <Drawing/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Analysis/>
-       </TabPanel>
+        <Selecting/>
+      </TabPanel>
     </div>
   );
 };
 
-export default Tabb;
+export default Analysis;

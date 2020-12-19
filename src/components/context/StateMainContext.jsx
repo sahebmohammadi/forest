@@ -6,20 +6,20 @@ const StateMainContext = ({ children }) => {
 
     const [hiddenProduct, setHiddenProduct] = useState([
         {
-            title: "تیتر گروه ۱",
+            title: "تیتر گروه اول",
             products: [
-                { id: 1, title: "product one", description: "Description one", hidden: false, checked: true },
-                { id: 2, title: "product two", description: "Description two", hidden: false, checked: true },
-                { id: 3, title: "product three", description: "Description three", hidden: false, checked: true }
+                { id: 1, title: "لایه اول گروه اول", description: "توضیحات لایه اول گروه اول", hidden: false, checked: true, accordionOpen: true },
+                { id: 2, title: "درختان", description: "توضیحات لایه دوم گروه اول", hidden: false, checked: true, accordionOpen: true },
+                { id: 3, title: "لایه سوم گروه اول", description: "توضیحات لایه سوم گروه اول", hidden: false, checked: true, accordionOpen: true }
             ]
         }
         ,
         {
-            title: "تیتر گروه ۲",
+            title: "تیتر گروه دوم",
             products: [
-                { id: 1, title: "product one2", description: "Description one", hidden: false, checked: true },
-                { id: 2, title: "product two2", description: "Description two", hidden: false, checked: true },
-                { id: 3, title: "product three2", description: "Description three", hidden: false, checked: true }
+                { id: 1, title: "لایه اول گروه دوم", description: " توضیحات لایه اول گروه دوم و ادامه توضیحات برای تست بیشتر", hidden: false, checked: true, accordionOpen: true },
+                { id: 2, title: "لایه دوم گروه دوم", description: "توضیحات لایه دوم گروه دوم", hidden: false, checked: true, accordionOpen: true},
+                { id: 3, title: "لایه سوم گروه دوم", description: "توضیحات لایه سوم گروه دوم", hidden: false, checked: true, accordionOpen: true}
             ]
         }
     ]
