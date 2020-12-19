@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-// import Header from "./Header"
-// import Footer from "./Footer"
 import DrawerList from './../components/Drawer/DrawerList';
 import BottomNavigation from '../components/Drawer/BottomNavigation';
 import styled from 'styled-components';
