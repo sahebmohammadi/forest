@@ -10,14 +10,22 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.5.0",
+    "array-move": "^3.0.1",
     "jss-rtl": "^0.3.0",
+    "material-ui-dropzone": "^3.5.0",
+    "node-sass": "^4.14.1",
     "react": "^17.0.1",
+    "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+<<<<<<< HEAD
     "react-select": "^3.1.1",
     "react-step-progress-bar": "^1.0.3",
     "react-tooltip": "^4.2.11",
+=======
+    "react-sortable-hoc": "^1.11.0",
+>>>>>>> cd89efc0fef23c43a79147ad3f1c0dd144134dde
     "react-uuid": "^1.0.2",
     "sass": "^1.30.0",
     "styled-components": "^5.2.1",
