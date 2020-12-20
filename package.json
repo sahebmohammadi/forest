@@ -19,13 +19,10 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
-<<<<<<< HEAD
     "react-select": "^3.1.1",
     "react-step-progress-bar": "^1.0.3",
     "react-tooltip": "^4.2.11",
-=======
     "react-sortable-hoc": "^1.11.0",
->>>>>>> cd89efc0fef23c43a79147ad3f1c0dd144134dde
     "react-uuid": "^1.0.2",
     "sass": "^1.30.0",
     "styled-components": "^5.2.1",
