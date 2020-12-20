@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { drawerListItems } from './DrawerListItems';
 import styled from 'styled-components';
