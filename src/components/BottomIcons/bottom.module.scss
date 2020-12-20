@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  position: fixed;
+  bottom: 44px;
+  padding: 0;
+  left: 30px;
+  width: 195px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 96px;
+    height: 35px;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 1px;
+    border-radius: 8px 0 0 8px;
+    span {
+      font-size: 11px;
+      color: #615f5f;
+      font-family: 'IRANSans';
+    }
+  }
+  .map {
+    span {
+      font-size: 11px;
+      color: #615f5f;
+      font-family: 'IRANSans';
+    }
+  }
+  .icon {
+    border-radius: 0 8px 8px 0;
+  }
+}

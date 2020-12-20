@@ -1,0 +1,142 @@
+.wrapper {
+  width: 100%;
+  border-radius: 8px;
+  height: calc(100vh - 50px);
+  border: 1px solid #e4e4e4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  > div {
+    border: 1px solid #e4e4e4;
+    border-radius: 8px 8px 0 0;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 25%;
+    background-color: #00a594;
+    .topSection {
+      width: 95%;
+      height: 28px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      font-size: 12px;
+      font-family: 'IRANSans';
+      border-bottom: 2px solid #48bbaf;
+    }
+    .searchSection {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 95%;
+    }
+    .hint {
+      width: 95%;
+      // height: 5%;
+      display: flex;
+      color: #fff;
+      font-size: 9px;
+      font-family: 'IRANSans';
+    }
+  }
+  .tab {
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    width: 100%;
+    background-color: #00a594;
+    margin-top: 1px;
+    border-radius: 1px;
+  }
+  .summaryWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    // border: 1px solid #e4e4e4;
+    > div {
+      border-radius: 8px;
+      border: 1px solid #e4e4e4;
+    }
+    .graph {
+      width: 100%;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .circleGraph {
+      width: 48%;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .layerDetail {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 48%;
+      height: 100px;
+      flex-wrap: wrap;
+    }
+  }
+}
+.graphHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3px;
+  width: 95%;
+  > span {
+    font-size: 12px;
+    font-family: 'IRANSans';
+    color: #747070;
+  }
+  .buttonGroup {
+    min-width: 30%;
+    // background-color: #efefef;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 960px) {
+  .wrapper {
+    height: 180vh;
+  }
+  .header {
+    height: auto !important;
+    .searchSection {
+      flex-direction: column !important;
+      align-items: center;
+      justify-content: space-between;
+      > div {
+        width: 95%;
+      }
+    }
+  }
+  .summaryWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 500px !important;
+    justify-content: space-between;
+    > div {
+      width: 100% !important;
+    }
+  }
+}

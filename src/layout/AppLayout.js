@@ -1,12 +1,16 @@
-import React from 'react';
-// import Header from "./Header"
-// import Footer from "./Footer"
+import React, { useEffect, useState } from 'react';
 import DrawerList from './../components/Drawer/DrawerList';
-import SearchInput from '../components/Search/SearchInput';
+import BottomNavigation from '../components/Drawer/BottomNavigation';
 import styled from 'styled-components';
 import { Grid } from '@material-ui/core';
 import backgroundImage from '../assets/images/map.png';
 import AppBar from './../components/Search/AppBar';
+import MobileAppBar from './../components/Search/MobileAppBar';
+import { useMediaQuery } from '@material-ui/core';
+import BottomLeft from '../components/BottomIcons/BottomLeft.jsx';
+import LocationData from './../components/BottomIcons/LocationData';
+import { withRouter } from 'react-router-dom';
+import DashBoardPageContent from './../components/dashBoradPageContent/DashBoardPageContent';
 
 const Content = styled.div`
   background-image: url(${backgroundImage});
@@ -15,44 +19,78 @@ const Content = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 200vh;
+  height: calc(100vh - 50px);
   // background-color: #444;
   border-radius: 15px;
   padding: 1rem;
 `;
-const ProfileWrapper = styled.div`
-  display: flex;
-  position: fixed;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  width: 100%;
-  height: 400px;
-  background-color: #ccc;
-`;
-const Account = styled.div`
-  // width: 30%;
-  height: 100%;
-`;
-const AppLayout = ({ children }) => {
+
+const AppLayout = ({ children, location }) => {
+  // ? state
+  const [isDashboard, setIsDashBoard] = useState(false);
+  // ? useEffect
+  useEffect(() => {
+    // ? check the router is /dashboard page or not
+    const checkPathName = () => {
+      if (location.pathname === '/dashboard') {
+        return setIsDashBoard(true);
+      } else return setIsDashBoard(false);
+    };
+    // ? CALL FUNCTION
+    checkPathName();
+  }, [location.pathname, isDashboard]);
+
+  // ? Check the window size
+  const matches = useMediaQuery('(max-width:960px)');
+  const setPadding = () => {
+    if (!matches) {
+      return '20px 0 20px 20px';
+    } else return '10px 10px 10px 10px';
+  };
+
   return (
     <>
       <Grid container xs={12} md={12} lg={12}>
-        <Grid item xs={2} md={1}>
-          <DrawerList />
-        </Grid>
-        <Grid item xs={10} md={11} style={{ padding: '1.5rem 0 0 1.2rem' }}>
+        {!matches && (
+          <Grid item md={1} lg={1}>
+            <DrawerList />
+          </Grid>
+        )}
+        {isDashboard && (
+          <Grid item md={7} lg={7} style={{ padding: setPadding() }}>
+            <DashBoardPageContent />
+          </Grid>
+        )}
+        <Grid
+          item
+          xs={12}
+          md={isDashboard ? 4 : 11}
+          lg={isDashboard ? 4 : 11}
+          style={{ padding: setPadding() }}
+        >
           <Content>
             <Grid item xs={12} md={8}>
               {children}
             </Grid>
             <Grid item xs={12} md={4}>
-              <AppBar />
+              {matches ? <MobileAppBar /> : !isDashboard && <AppBar />}
             </Grid>
+            {!matches && !isDashboard && (
+              <>
+                <BottomLeft />
+                <LocationData />
+              </>
+            )}
           </Content>
         </Grid>
+        {matches && (
+          <Grid item xs={12} style={{ marginTop: '0.5rem' }}>
+            <BottomNavigation />
+          </Grid>
+        )}
       </Grid>
     </>
   );
 };
 
-export default AppLayout;
+export default withRouter(AppLayout);

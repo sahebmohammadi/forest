@@ -7,12 +7,17 @@ import uuid from 'react-uuid';
 // import PrivateRoute from 'components/PrivateRoute';
 
 const App = () => {
+  // useEffect(() => {
+  //   console.log('saheb mim');
+  // }, []);
   return (
-    <Switch>
-      {routes.map((route) => (
-        <Route key={uuid()} {...route} />
-      ))}
-    </Switch>
+    <AppLayout>
+      <Switch>
+        {routes.map((route) => (
+          <Route key={uuid()} {...route} />
+        ))}
+      </Switch>
+    </AppLayout>
   );
 };
 

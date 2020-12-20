@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AppLayout from '../layout/AppLayout';
 import styled from 'styled-components';
 import MainLayer from '../components/productList/MainLayer';
 import Tabb from '../components/info/Tabs';
@@ -28,14 +27,14 @@ const ForestChangesPage = () => {
 
   return (
     <>
-      <AppLayout>
+      {/* <AppLayout> */}
         <Wrapper>
           <Flex>
             <MainLayer/>
             <Tabb/>
             </Flex>
         </Wrapper>
-      </AppLayout>
+      {/* </AppLayout> */}
     </>
   );
 };

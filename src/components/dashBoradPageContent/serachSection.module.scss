@@ -1,0 +1,33 @@
+.formControl {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 30%;
+  label {
+    width: 100%;
+    color: #fff;
+    font: 'IRANSans' normal 9px;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    position: relative;
+  }
+  .select {
+    margin-top: 4px;
+    width: 100%;
+    // height: 20px;
+    border-radius: 8px;
+    outline: none;
+    font-size: 12px;
+    font-family: 'IRANSans';
+    &:placeholder {
+      font-family: 'IRANSans';
+      font-size: 12px;
+      color: #747070;
+    }
+    &:focus {
+      border-color: #00a594;
+      outline: none;
+    }
+  }
+}

@@ -1,8 +1,7 @@
 import React from 'react';
-import AppLayout from '../layout/AppLayout';
 
 const DashboardPage = () => {
-  return <AppLayout>wellcome to DashboardPage</AppLayout>;
+  return <div>wellcome to DashboardPage ...</div>;
 };
 
 export default DashboardPage;
