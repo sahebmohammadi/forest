@@ -11,6 +11,7 @@ import { create } from 'jss';
 import rtl from 'jss-rtl';
 import { StylesProvider, jssPreset } from '@material-ui/core/styles';
 import { BrowserRouter } from 'react-router-dom';
+import StateMainContext from './components/context/StateMainContext';
 // Configure JSS
 const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
 ReactDOM.render(
@@ -18,9 +19,11 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <StylesProvider jss={jss}>
+        <StateMainContext>
         <BrowserRouter>
           <App />
         </BrowserRouter>
+        </StateMainContext>
       </StylesProvider>
     </ThemeProvider>
   </React.StrictMode>,
