@@ -86,10 +86,10 @@ export default function NavTabs() {
         <SummarySection />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        کاربری
+        <SummarySection />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        پوشش درختی
+        <SummarySection />
       </TabPanel>
     </div>
   );

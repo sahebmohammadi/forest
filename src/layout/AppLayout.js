@@ -12,20 +12,20 @@ import LocationData from './../components/BottomIcons/LocationData';
 import { withRouter } from 'react-router-dom';
 import DashBoardPageContent from './../components/dashBoradPageContent/DashBoardPageContent';
 
-const Content = styled.div`
-  background-image: url(${backgroundImage});
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: calc(100vh - 50px);
-  // background-color: #444;
-  border-radius: 15px;
-  padding: 1rem;
-`;
-
+// color: ${(props) => (props.path === location.pathname ? '#00a594' : '#747070')};
 const AppLayout = ({ children, location }) => {
+  const Content = styled.div`
+    background-image: url(${backgroundImage});
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: ${(props) => (props.matches ? `calc(100vh - 60px)` : `calc(100vh - 40px)`)};
+    border-radius: 15px;
+    padding: 1rem;
+  `;
+
   // ? state
   const [isDashboard, setIsDashBoard] = useState(false);
   // ? useEffect
@@ -45,7 +45,7 @@ const AppLayout = ({ children, location }) => {
   const setPadding = () => {
     if (!matches) {
       return '20px 0 20px 20px';
-    } else return '10px 10px 10px 10px';
+    } else return '10px';
   };
 
   return (
@@ -57,7 +57,7 @@ const AppLayout = ({ children, location }) => {
           </Grid>
         )}
         {isDashboard && (
-          <Grid item md={7} lg={7} style={{ padding: setPadding() }}>
+          <Grid item md={7} lg={7} style={{ padding: matches ? '0' : setPadding() }}>
             <DashBoardPageContent />
           </Grid>
         )}
@@ -68,7 +68,7 @@ const AppLayout = ({ children, location }) => {
           lg={isDashboard ? 4 : 11}
           style={{ padding: setPadding() }}
         >
-          <Content>
+          <Content matches={matches}>
             <Grid item xs={12} md={8}>
               {children}
             </Grid>

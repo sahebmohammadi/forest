@@ -1,11 +1,12 @@
 .wrapper {
   width: 100%;
   border-radius: 8px;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 40px);
   border: 1px solid #e4e4e4;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  overflow-y: scroll;
   > div {
     border: 1px solid #e4e4e4;
     border-radius: 8px 8px 0 0;
@@ -17,11 +18,12 @@
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    min-height: 25%;
+    height: 202px;
+    // min-height: 202px;
     background-color: #00a594;
     .topSection {
       width: 95%;
-      height: 28px;
+      height: 40px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -39,60 +41,58 @@
     }
     .hint {
       width: 95%;
-      // height: 5%;
+      height: 30px;
       display: flex;
       color: #fff;
       font-size: 9px;
       font-family: 'IRANSans';
     }
   }
-  .tab {
-    display: flex;
-    justify-content: center;
-    height: 35px;
-    width: 100%;
-    background-color: #00a594;
-    margin-top: 1px;
-    border-radius: 1px;
-  }
+
   .summaryWrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
     flex-wrap: wrap;
     align-items: flex-start;
     width: 100%;
-    height: 300px;
+    height: auto;
     border-radius: 8px;
-    // border: 1px solid #e4e4e4;
     > div {
       border-radius: 8px;
       border: 1px solid #e4e4e4;
     }
     .graph {
       width: 100%;
-      height: 100px;
+      height: 248px;
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
       flex-wrap: wrap;
+      margin-bottom: 33px;
     }
     .circleGraph {
       width: 48%;
-      height: 100px;
+      height: 291px;
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
     }
     .layerDetail {
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
       width: 48%;
-      height: 100px;
+      height: 291px;
       flex-wrap: wrap;
+      > div {
+        width: 95%;
+      }
     }
   }
 }
@@ -115,9 +115,58 @@
   }
 }
 
+p.graphDescription {
+  width: 95%;
+  font-size: 9px;
+  font-family: 'IRANSans';
+  color: #9d9b9b;
+  margin-top: 5px;
+}
+
+div.layerCounter {
+  display: flex;
+  height: 25px;
+  width: 95%;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  > div {
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    align-items: center;
+    > p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      background-color: #6668d9;
+      width: 20px;
+      height: 20px;
+      font-size: 14px;
+      font-family: 'IRANSans';
+      border-radius: 100%;
+    }
+    > span {
+      color: #747070;
+      font-size: 9px;
+      font-family: 'IRANSans';
+    }
+  }
+  > span {
+    color: #9d9b9b;
+    font-size: 9px;
+    font-family: 'IRANSans';
+  }
+}
+
 @media (max-width: 960px) {
   .wrapper {
-    height: 180vh;
+    height: calc(100vh - 170px);
+    position: absolute;
+    left: 5vw;
+    top: 100px;
+    width: 90%;
   }
   .header {
     height: auto !important;
@@ -133,10 +182,13 @@
   .summaryWrapper {
     display: flex;
     flex-direction: column;
-    height: 500px !important;
-    justify-content: space-between;
+    height: auto !important;
+    justify-content: space-around;
     > div {
       width: 100% !important;
+    }
+    .layerDetail {
+      margin-top: 30px;
     }
   }
 }
